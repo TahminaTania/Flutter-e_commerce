@@ -63,6 +63,16 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
                 return ProductItem(product: product);
               },
             );
+          } else if (state is ProductInitialState ||
+              state is ProductState ||
+              state is ProductLoadingState) {
+            return Container(
+              height: double.infinity,
+              child: Center(
+                  child: Column(
+                children: [CircularProgressIndicator(), Text(state.toString())],
+              )),
+            );
           } else {
             return Container(
               child: Text(state.toString()),

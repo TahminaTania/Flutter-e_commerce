@@ -52,7 +52,7 @@ class ProductItem extends StatelessWidget {
                       final productToAdd = product;
                       context.read<CartCubit>().addToCart(product);
                     },
-                    icon: Icon(Icons.favorite_outline))
+                    icon: Icon(Icons.favorite_outline)),
               ],
             ),
           ),
