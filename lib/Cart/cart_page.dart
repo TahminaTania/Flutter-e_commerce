@@ -83,14 +83,3 @@ class CartPage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-//  Padding(
-//                   padding: const EdgeInsets.all(16.0),
-//                   child: Text(
-//                     'Total Price: \$${totalPrice.toStringAsFixed(2)}',
-//                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-//                   ),
-//                 ),

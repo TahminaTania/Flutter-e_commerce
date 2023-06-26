@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/Cart/cart_page.dart';
 import 'package:e_commerce_app/Globals/responsiveSize.dart';
 import 'package:e_commerce_app/cubit/product_cubit.dart';
+import 'package:e_commerce_app/favourite/favourite_page.dart';
 import 'package:e_commerce_app/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +34,12 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: ((context) => CartPage())));
+              },
+              icon: Icon(Icons.shopping_cart)),
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: ((context) => FavouritePage())));
               },
               icon: Icon(Icons.favorite)),
         ],
@@ -67,7 +74,6 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
               state is ProductState ||
               state is ProductLoadingState) {
             return Container(
-              height: double.infinity,
               child: Center(
                   child: Column(
                 children: [CircularProgressIndicator(), Text(state.toString())],

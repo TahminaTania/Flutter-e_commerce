@@ -47,12 +47,27 @@ class ProductItem extends StatelessWidget {
                     ),
                   ),
                 ),
-                IconButton(
-                    onPressed: () {
-                      final productToAdd = product;
-                      context.read<CartCubit>().addToCart(product);
-                    },
-                    icon: Icon(Icons.favorite_outline)),
+                Container(
+                  child: Row(
+                    children: [
+                      IconButton(
+                          onPressed: () {
+                            final productToAdd = product;
+                            context.read<CartCubit>().addToCart(product);
+                          },
+                          icon: Icon(Icons.shopping_cart)),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      IconButton(
+                          onPressed: () {
+                            final productToAdd = product;
+                            context.read<CartCubit>().addToFav(product);
+                          },
+                          icon: Icon(Icons.favorite)),
+                    ],
+                  ),
+                )
               ],
             ),
           ),
